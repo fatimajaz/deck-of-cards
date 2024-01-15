@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+</head>
+
+<body>
+<div class="setOfCards">
+	<div class="card" data-card-color="club" data-card-index="A">
+		<div class="card-pip">♣</div>
+	</div>
+	<div class="card" data-card-color="spade" data-card-index="A">
+		<div class="card-pip">♠</div>
+	</div>
+	<div class="card" data-card-color="heart" data-card-index="A">
+		<div class="card-pip">♥</div>
+	</div>
+	<div class="card" data-card-color="diamond" data-card-index="A">
+		<div class="card-pip">♦</div>
+	</div>
+	<div class="card" data-card-color="diamond" data-card-index="10">
+		<div class="card-pip">♦ ♦<br>♦<br>♦ ♦<br>♦ ♦<br>♦<br>♦ ♦</div>
+	</div>
+</div>
+
+<style>
+
+@charset "UTF-8";
+.setOfCards {
+  height: 88.9mm;
+  width: 63.5mm;
+  position: relative; }
+
+.card {
+  height: inherit;
+  width: inherit;
+  background: #fff;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.3);
+  border-radius: 10px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform-origin: 25% bottom;
+  transition: transform .2s; }
+
+.setOfCards:hover .card:nth-child(1) {
+  transform: rotate(-15deg); }
+
+.setOfCards .card:hover:nth-child(1) {
+  transform: rotate(-15deg) translateY(-20px); }
+
+.setOfCards:hover .card:nth-child(2) {
+  transform: rotate(-5deg); }
+
+.setOfCards .card:hover:nth-child(2) {
+  transform: rotate(-5deg) translateY(-20px); }
+
+.setOfCards:hover .card:nth-child(3) {
+  transform: rotate(5deg); }
+
+.setOfCards .card:hover:nth-child(3) {
+  transform: rotate(5deg) translateY(-20px); }
+
+.setOfCards:hover .card:nth-child(4) {
+  transform: rotate(15deg); }
+
+.setOfCards .card:hover:nth-child(4) {
+  transform: rotate(15deg) translateY(-20px); }
+
+.setOfCards:hover .card:nth-child(5) {
+  transform: rotate(25deg); }
+
+.setOfCards .card:hover:nth-child(5) {
+  transform: rotate(25deg) translateY(-20px); }
+
+.card[data-card-color="club"],
+.card[data-card-color="spade"] {
+  color: black; }
+
+.card[data-card-color="heart"],
+.card[data-card-color="diamond"] {
+  color: red; }
+
+.card::before,
+.card::after {
+  content: "";
+  position: absolute;
+  font-size: 2em;
+  line-height: .8;
+  text-align: center;
+  white-space: pre; }
+
+.card::before {
+  top: 15px;
+  left: 15px; }
+
+.card::after {
+  bottom: 15px;
+  right: 15px;
+  transform: scaleY(-1); }
+
+.card[data-card-color="club"]::before,
+.card[data-card-color="club"]::after {
+  content: attr(data-card-index) "\a♣"; }
+
+.card[data-card-color="spade"]::before,
+.card[data-card-color="spade"]::after {
+  content: attr(data-card-index) "\a♠"; }
+
+.card[data-card-color="heart"]::before,
+.card[data-card-color="heart"]::after {
+  content: attr(data-card-index) "\a♥"; }
+
+.card[data-card-color="diamond"]::before,
+.card[data-card-color="diamond"]::after {
+  content: attr(data-card-index) "\a♦"; }
+
+.card-pip {
+  text-align: center;
+  font-size: 4em;
+  line-height: .75;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); }
+
+/* General page styling */
+html {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #222; }
+</style>
+</body>
+<html>
